@@ -1,0 +1,32 @@
+{
+  "name": "graphql-node-project",
+  "version": "1.0.0",
+  "description": "This is a simple GraphQL project with learning purpose",
+  "main": "index.js",
+  "scripts": {
+    "dev:simple": "tsnd --respawn --transpile-only simple-server.ts",
+    "dev": "tsnd --respawn --transpile-only src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilgarcia/GraphQL-Node-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilgarcia/GraphQL-Node-Project/issues"
+  },
+  "homepage": "https://github.com/ilgarcia/GraphQL-Node-Project#readme",
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "apollo-server": "^3.12.0",
+    "class-validator": "^0.14.0",
+    "graphql": "^15.8.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1"
+  }
+}
