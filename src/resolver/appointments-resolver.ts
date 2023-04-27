@@ -1,12 +1,18 @@
-import { Arg, Mutation, Query, Resolver } from "type-graphql";
+import { Arg, FieldResolver, Mutation, Query, Resolver, Root } from "type-graphql";
 import { CreateAppointmentInput } from "../dtos/inputs/create-appointments-input";
-import { Appointment } from "../dtos/models/appontemnt-model";
+import { Appointment } from "../dtos/models/appointemnt-model";
+import { Customer } from "../dtos/models/customer-model";
 
-@Resolver()
+@Resolver(() => Appointment)
 export class AppointmentsResolver {
-  @Query(() => String)
-  async helloWorld() {
-    return "Hello World";
+  @Query(() => [Appointment])
+  async appointments() {
+    return [
+      {
+        startsAt: new Date(),
+        endsAt: new Date(),
+      }
+    ];
   }
 
   @Mutation(() => Appointment)
@@ -17,5 +23,15 @@ export class AppointmentsResolver {
     };
 
     return appointment;
+  }
+
+  @FieldResolver(()=>Customer)
+  async customer(@Root() appointment: Appointment) {
+    console.log(appointment)
+
+    return {
+      name:"Jonh Doe",
+    }
+
   }
 }

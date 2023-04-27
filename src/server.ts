@@ -7,6 +7,7 @@ import { AppointmentsResolver } from "./resolver/appointments-resolver";
 async function bootstrap() {
   const schema = await buildSchema({
     resolvers: [AppointmentsResolver],
+    validate: { forbidUnknownValues: false },
     emitSchemaFile: path.resolve(__dirname, "schema.gql"),
   });
 

@@ -10,5 +10,4 @@ export class CreateAppointmentInput {
 
   @Field()
   endsAt: Date;
-
 }
